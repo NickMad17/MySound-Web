@@ -2,6 +2,46 @@
     color: $mainColor;
 }
 
+
+
+.app{
+}
+
+.logo-animation {
+    animation: rotate-in-hor 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.louder-wrapper {
+    z-index: 100;
+    background: #0000003c;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .display-none{
     display: none;
 }
+
+.louder{
+    font-size: 3rem;
+    font-weight: 500;
+    animation: louded 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite;
+}
+
+@keyframes louded {
+    0% {
+      -webkit-transform: rotateX(360deg);
+              transform: rotateX(360deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+
