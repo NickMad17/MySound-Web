@@ -153,12 +153,10 @@ a {
   0% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
-    opacity: 0;
   }
   100% {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    opacity: 1;
   }
 }
 
@@ -166,12 +164,10 @@ a {
   0% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
-    opacity: 0;
   }
   100% {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    opacity: 1;
   }
 }
 .header {
@@ -191,6 +187,10 @@ a {
 .header__logo p {
   font-size: 3rem;
   font-weight: 500;
+}
+.header__logo:hover {
+  -webkit-animation: rotate-in-hor 1s linear infinite;
+          animation: rotate-in-hor 1s linear infinite;
 }
 .header__nav {
   display: -webkit-box;
@@ -267,12 +267,10 @@ a {
   0% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
-    opacity: 0;
   }
   100% {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    opacity: 1;
   }
 }
 
@@ -280,12 +278,10 @@ a {
   0% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
-    opacity: 0;
   }
   100% {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    opacity: 1;
   }
 }
 .player {

@@ -36,12 +36,10 @@
     0% {
       -webkit-transform: rotateX(360deg);
               transform: rotateX(360deg);
-      opacity: 0;
     }
     100% {
       -webkit-transform: rotateX(0deg);
               transform: rotateX(0deg);
-      opacity: 1;
     }
   }
 
