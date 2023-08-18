@@ -1,0 +1,83 @@
+.header{
+    z-index: 200;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.6156862745);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    &__logo{
+        p{
+            font-size: 3rem;
+            font-weight: 500;
+        }
+    }
+    &__nav{
+        display: flex;
+        gap: 3rem;
+    }
+    &__item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        font-size: 1.5rem;
+        box-sizing: border-box;
+        transition: color 0.4s ease-in-out;
+        &:hover{
+            color: $mainColor;
+            border-radius: 30px;
+        }
+    }
+
+    &__blocks{
+        display: flex;
+        gap: 3rem;
+    }
+
+    &__block{
+        min-width: 2rem;
+        display: flex;
+        gap: 0.3rem;
+        justify-content: center;
+        align-items: center;
+        color: $mainColor;
+        border-bottom: 2px solid $mainColor;
+        transition: border 0.4s ease-in-out;
+        &:hover{
+            border-bottom: 2px solid $color;
+        }
+        &_search{
+            font-size: 2rem;
+            color: $mainColor;
+        }
+        &_login{
+            color: $color;
+            font-size: 1.6rem;
+            i{
+                color: $mainColor;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.block{
+    &__text{
+        color: $color;
+        padding-left: 0.2rem;
+    }
+}
+@keyframes rotate-in-hor {
+    0% {
+      -webkit-transform: rotateX(360deg);
+              transform: rotateX(360deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
