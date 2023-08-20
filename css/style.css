@@ -1,5 +1,4 @@
 /* Reset and base styles  */
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -11,6 +10,11 @@
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 /* Links */
@@ -94,13 +98,27 @@ html {
 
 body {
   font-family: "Exo", sans-serif;
-  background: #0d0638;
   font-weight: bold;
   color: #fff;
+  background: #0d0638;
+}
+
+.wrapper-body {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main {
   padding-top: 7rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 a {
@@ -112,68 +130,6 @@ a {
   padding-right: calc(50% - 650px);
 }
 
-.main-color {
-  color: #104ee1;
-}
-
-.logo-animation {
-  -webkit-animation: rotate-in-hor 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: rotate-in-hor 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.louder-wrapper {
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.2352941176);
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.display-none {
-  display: none;
-}
-
-.louder {
-  font-size: 3rem;
-  font-weight: 500;
-  -webkit-animation: louded 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-          animation: louded 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-}
-
-@-webkit-keyframes louded {
-  0% {
-    -webkit-transform: rotateX(360deg);
-    transform: rotateX(360deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
-}
-
-@keyframes louded {
-  0% {
-    -webkit-transform: rotateX(360deg);
-    transform: rotateX(360deg);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
-}
 .header {
   z-index: 200;
   width: 100vw;
@@ -191,6 +147,10 @@ a {
 .header__logo p {
   font-size: 3rem;
   font-weight: 500;
+}
+.header__logo:hover {
+  -webkit-animation: rotate-in-hor 1s linear infinite;
+          animation: rotate-in-hor 1s linear infinite;
 }
 .header__nav {
   display: -webkit-box;
@@ -267,12 +227,10 @@ a {
   0% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
-    opacity: 0;
   }
   100% {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    opacity: 1;
   }
 }
 
@@ -280,16 +238,16 @@ a {
   0% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
-    opacity: 0;
   }
   100% {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg);
-    opacity: 1;
   }
 }
 .player {
-  padding-top: 1rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -303,6 +261,9 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: rgba(91, 91, 91, 0.4784313725);
+  width: 100vw;
+  height: 100vh;
 }
 
 .wrapper {
@@ -310,7 +271,7 @@ a {
   border: 1px solid transparent;
   padding: 1.875rem;
   border-radius: 1.25rem;
-  background-color: rgba(0, 0, 0, 0.462745098);
+  background-color: rgba(0, 0, 0, 0.862745098);
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
           box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
@@ -495,7 +456,7 @@ p {
   }
 }
 .loader {
-  height: 4rem;
+  height: 3.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,4 +532,218 @@ p {
 .stroke:nth-child(7) {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
+}
+
+.heading {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 2rem;
+}
+
+.beat-container {
+  margin: 0;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.6156862745);
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 6rem;
+}
+
+.track {
+  height: 4rem;
+  background: #000;
+  padding: 0 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 10px;
+  border: #000 1px solid;
+  -webkit-transition: border 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
+}
+.track:hover {
+  cursor: pointer;
+  border: #104ee1 1px solid;
+}
+.track-container {
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+.track-logo {
+  height: 65%;
+  border: 2px solid #FFFAFA;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 6px 5px black;
+          box-shadow: 0px 6px 5px black;
+  border: 2px solid #104ee1;
+}
+.track-nameing {
+  font-size: 1.7rem;
+}
+.track-price {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+@media (max-width: 1300px) {
+  .center {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .header__item {
+    display: none;
+  }
+  .header__block {
+    display: none;
+  }
+}
+@media (max-width: 425px) {
+  html {
+    font-size: 12px;
+  }
+  .loader {
+    width: 7rem;
+  }
+}
+.main-color {
+  color: #104ee1;
+}
+
+.app {
+  position: relative;
+}
+
+.logo-animation {
+  -webkit-animation: rotate-in-hor 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: rotate-in-hor 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.louder-wrapper {
+  bottom: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2352941176);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.display-none {
+  display: none;
+}
+
+.louder {
+  font-size: 3rem;
+  font-weight: 500;
+  -webkit-animation: louded 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+          animation: louded 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+@-webkit-keyframes louded {
+  0% {
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes louded {
+  0% {
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+  }
+}
+.track_active {
+  border: rgba(255, 0, 183, 0.7529411765) 3px solid;
+}
+.track_active:hover {
+  border: rgba(255, 0, 183, 0.7529411765) 3px solid;
+}
+
+.footer {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #0d0638;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+}
+
+.slider_container_footer {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0;
+}
+
+.buttons_footer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.track-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.track-name_footer {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 0.7rem;
+}
+
+.track-art_footer {
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  bottom: -1.2rem;
 }

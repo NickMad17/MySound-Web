@@ -12,6 +12,10 @@
             font-size: 3rem;
             font-weight: 500;
         }
+
+        &:hover{
+            animation: rotate-in-hor 1s linear infinite;
+        }
     }
     &__nav{
         display: flex;
@@ -73,11 +77,9 @@
     0% {
       -webkit-transform: rotateX(360deg);
               transform: rotateX(360deg);
-      opacity: 0;
     }
     100% {
       -webkit-transform: rotateX(0deg);
               transform: rotateX(0deg);
-      opacity: 1;
     }
   }

@@ -4,13 +4,22 @@ html {
 
 body {
     font-family: 'Exo', sans-serif;
-    background: $bgColor;
     font-weight: bold;
     color: $color;
+    background: $bgColor;
+
+
+}
+
+.wrapper-body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     padding-top: 7rem;
+    flex: 1 1 auto;
 }
 
 a {

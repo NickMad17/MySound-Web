@@ -1,16 +1,22 @@
 .player{
-    padding-top: 1rem;
+    // z-index: 200;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    background: #5b5b5b7a;
+    width: 100vw;
+    height: 100vh;
 }
   .wrapper{ 
     min-height: 30px;
     border: 1px solid transparent;
     padding: 1.875rem;
     border-radius: 1.25rem;
-    background-color: #00000076;
+    background-color: #000000dc;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
   
@@ -22,7 +28,7 @@
   }
   
   .track-art {
-    z-index: 100;
+  z-index: 100;
   margin: 25px;
   height: 12.5rem;
   width: 12.5rem;
@@ -154,7 +160,7 @@
       }
   }
   .loader {
-    height: 4rem;
+    height: 3.4rem;
     display: flex;
     justify-content: center;
     align-items: center;

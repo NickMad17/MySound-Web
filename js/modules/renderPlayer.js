@@ -1,44 +1,53 @@
-export function renderPlayer() {
+import { music_list } from "./trackList.js";
+import { renderTrackList } from "./renderTrackList.js";
+export function renderPlayer(indexEl) {
     const app = document.querySelector('.app');
-    app.innerHTML = `<div class="player">
-    <div class="wrapper">
-        <div class="details">
-            <div class="now-playing">PLAYING x OF y</div>
-            <div class="track-art"></div>
-            <div class="track-name">Track Name</div>
-        </div>
+    app.innerHTML += `
+        <div class="player center">
+            <div class="wrapper">
+                <div class="details">
+                    <div class="now-playing">PLAYING x OF y</div>
+                    <div class="track-art"></div>
+                    <div class="track-name">Track Name</div>
+                </div>
 
-        <div class="slider_container">
-            <div class="current-time">00:00</div>
-            <input type="range" min="1" max="100" value="0" class="seek_slider">
-            <div class="total-duration">00:00</div>
-        </div>
+                <div class="slider_container">
+                    <div class="current-time">00:00</div>
+                    <input type="range" min="1" max="100" value="0" class="seek_slider">
+                    <div class="total-duration">00:00</div>
+                </div>
 
-        <div class="buttons">
-            <div class="random-track">
-                <i class="fas fa-random fa-2x" title="random"></i>
-            </div>
-            <div class="prev-track">
-                <i class="fa fa-step-backward fa-2x"></i>
-            </div>
-            <div class="playpause-track">
-                <i class="fa fa-play-circle fa-5x"></i>
-            </div>
-            <div class="next-track">
-                <i class="fa fa-step-forward fa-2x"></i>
-            </div>
-            <div class="repeat-track">
-                <i class="fa fa-repeat fa-2x" title="repeat"></i>
-            </div>
-        </div>
+                <div class="buttons">
+                    <div class="random-track">
+                        <i class="fas fa-random fa-2x" title="random"></i>
+                    </div>
+                    <div class="prev-track">
+                        <i class="fa fa-step-backward fa-2x"></i>
+                    </div>
+                    <div class="playpause-track">
+                        <i class="fa fa-play-circle fa-5x"></i>
+                    </div>
+                    <div class="next-track">
+                        <i class="fa fa-step-forward fa-2x"></i>
+                    </div>
+                    <div class="repeat-track">
+                        <i class="fa fa-repeat fa-2x" title="repeat"></i>
+                    </div>
+                </div>
 
-        <!-- <div class="slider_container">
-            <i class="fa fa-volume-down"></i>
-            <input type="range" min="1" max="100" value="99" class="volume_slider" >
-            <i class="fa fa-volume-up"></i>
-        </div> -->
-    </div>
-</div>`
+                <!-- <div class="slider_container">
+                    <i class="fa fa-volume-down"></i>
+                    <input type="range" min="1" max="100" value="99" class="volume_slider" >
+                    <i class="fa fa-volume-up"></i>
+                </div> -->
+            </div>
+        </div>`
+
+const tracks = document.querySelectorAll('.track');
+
+const background = document.querySelector('.player');
+const formPlayer = document.querySelector('.wrapper');
+
 
 const now_playing = document.querySelector('.now-playing');
 const track_art = document.querySelector('.track-art');
@@ -59,35 +68,31 @@ const headerLogo = document.querySelector('.header__logo p');
 const randomIcon = document.querySelector('.fa-random');
 const curr_track = document.createElement('audio');
 
-let track_index = 0;
+let track_index = indexEl;
 let isPlaying = false;
 let isRandom = false;
 let updateTimer;
+let activeIndex = indexEl;
 
-const music_list = [
-    {
-        img : 'img/cover_beats/1.jpg',
-        name : 'Stay',
-        music : 'mp3/Летний хит.mp3'
-    },
-    {
-        img : 'img/cover_beats/2.jpg',
-        name : 'Falling',
-        music : 'mp3/DripDj.mp3'
-    },
-    {
-        img : 'img/cover_beats/3.jpg',
-        name : 'Faded',
-        music : 'mp3/undefinded.mp3'
-    },
-    {
-        img : 'img/cover_beats/4.jpg',
-        name : 'Rather',
-        music : 'mp3/Закольцовка.mp3'
-    }
-];
-
+tarackActive();
 loadTrack(track_index);
+playpauseTrack();
+
+background.addEventListener('click', () => {
+    document.body.style.background = `#0d0638`;
+    renderTrackList();
+    pauseTrack();
+
+})
+
+formPlayer.addEventListener('click', e => {
+    e.stopPropagation();
+})
+
+function tarackActive () {
+    tracks.forEach(el => el.classList.remove('track_active'));
+    tracks[track_index].classList.add('track_active');
+}
 
 function loadTrack(track_index){
     clearInterval(updateTimer);
@@ -103,7 +108,7 @@ function loadTrack(track_index){
     updateTimer = setInterval(setUpdate, 1000);
 
     curr_track.addEventListener('ended', nextTrack);
-    // random_bg_color();
+    random_bg_color();
 }
 
 function random_bg_color(){
@@ -134,7 +139,7 @@ function randomTrack(){
     isRandom ? pauseRandom() : playRandom();
 }
 random_btn.addEventListener('click', () => {
-    randomTrack()
+    randomTrack();
 })
 
 function playRandom(){
@@ -190,6 +195,7 @@ function nextTrack(){
     }else{
         track_index = 0;
     }
+    tarackActive();
     loadTrack(track_index);
     playTrack();
 }
@@ -203,6 +209,7 @@ function prevTrack(){
     }else{
         track_index = music_list.length -1;
     }
+    tarackActive();
     loadTrack(track_index);
     playTrack();
 }
