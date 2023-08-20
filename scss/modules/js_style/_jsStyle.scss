@@ -5,6 +5,7 @@
 
 
 .app{
+    position: relative;
 }
 
 .logo-animation {
@@ -12,6 +13,7 @@
 }
 
 .louder-wrapper {
+    bottom: 0;
     z-index: 100;
     background: #0000003c;
     height: 100vh;
@@ -43,3 +45,11 @@
     }
   }
 
+// track
+
+.track_active{
+    border: #ff00b7c0 3px solid;
+    &:hover {
+        border: #ff00b7c0 3px solid;
+    }
+}

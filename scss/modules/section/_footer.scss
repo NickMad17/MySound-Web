@@ -1,0 +1,39 @@
+.footer {
+    flex-direction: column;
+    background: $bgColor;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+}
+
+.slider_container_footer {
+    flex: 1;
+    padding: 0;
+}
+
+.buttons_footer {
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.track-wrapper {
+    display: flex;
+    position: relative;
+    
+}
+
+.track-name_footer {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 0.7rem;
+}
+
+.track-art_footer {
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    bottom: -1.2rem;
+    
+}

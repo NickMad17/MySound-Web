@@ -1,0 +1,40 @@
+@media (max-width: 1300px) {
+    .center{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .header{
+        &__item{
+            display: none;
+        }
+        &__block{
+            display: none;
+        }
+    }
+
+}
+
+@media (max-width: 425px) {
+    html {
+        font-size: 12px;
+    }
+
+    .loader{
+    width: 7rem;
+
+    }
+    .wrapper{
+    }
+
+    .beat {
+        &-container{
+            
+        }
+    }
+}

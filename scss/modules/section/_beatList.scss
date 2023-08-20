@@ -1,0 +1,66 @@
+
+.heading{
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 2rem;
+}
+
+.beat-container{
+    margin: 0;
+    padding: 2rem;
+    // background: rgba(0, 0, 0, 0.32);
+    background: rgba(0, 0, 0, 0.6156862745);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 6rem;
+}
+
+
+.track{
+    height: 4rem;
+    background: #000;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: #000 1px solid;
+    transition: border 0.3s ease-in-out;
+    &:hover{
+        cursor: pointer;
+        border: $mainColor 1px solid;
+    }
+
+    &-container{
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &-logo{
+        height: 65%;
+        border:2px solid 	#FFFAFA;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        box-shadow: 0px 6px 5px black;
+        border:2px solid 	$mainColor;
+    
+    }
+
+    &-nameing{
+        font-size: 1.7rem;
+    }
+
+    &-price{
+        font-size: 1.2rem;
+        color: $color;
+    }
+}
+
+
+
+
