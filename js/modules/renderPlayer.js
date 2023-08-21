@@ -2,50 +2,84 @@ import { music_list } from "./trackList.js";
 import { renderTrackList } from "./renderTrackList.js";
 export function renderPlayer(indexEl) {
     const app = document.querySelector('.app');
-    app.innerHTML += `
+    app.classList.add('padding-none');
+    app.innerHTML = `
         <div class="player center">
+
             <div class="wrapper">
-                <div class="details">
-                    <div class="now-playing">PLAYING x OF y</div>
-                    <div class="track-art"></div>
-                    <div class="track-name">Track Name</div>
-                </div>
-
-                <div class="slider_container">
-                    <div class="current-time">00:00</div>
-                    <input type="range" min="1" max="100" value="0" class="seek_slider">
-                    <div class="total-duration">00:00</div>
-                </div>
-
-                <div class="buttons">
-                    <div class="random-track">
-                        <i class="fas fa-random fa-2x" title="random"></i>
-                    </div>
-                    <div class="prev-track">
-                        <i class="fa fa-step-backward fa-2x"></i>
-                    </div>
-                    <div class="playpause-track">
-                        <i class="fa fa-play-circle fa-5x"></i>
-                    </div>
-                    <div class="next-track">
-                        <i class="fa fa-step-forward fa-2x"></i>
-                    </div>
-                    <div class="repeat-track">
-                        <i class="fa fa-repeat fa-2x" title="repeat"></i>
-                    </div>
-                </div>
-
-                <!-- <div class="slider_container">
-                    <i class="fa fa-volume-down"></i>
-                    <input type="range" min="1" max="100" value="99" class="volume_slider" >
-                    <i class="fa fa-volume-up"></i>
-                </div> -->
+               <div class="music">
+                 <div class="details">
+                     <div class="now-playing">PLAYING x OF y</div>
+                     <div class="track-art"></div>
+                     <div class="track-name">Track Name</div>
+                 </div>
+                
+                 <div class="slider_container">
+                     <div class="current-time">00:00</div>
+                     <input type="range" min="1" max="100" value="0" class="seek_slider">
+                     <div class="total-duration">00:00</div>
+                 </div>
+                
+                 <div class="slider_container">
+                 <i class="fa fa-volume-down"></i>
+                 <input type="range" min="1" max="100" value="99" class="volume_slider" >
+                 <i class="fa fa-volume-up"></i>
+                 </div> 
+                
+                 <div class="buttons">
+                     <div class="random-track">
+                         <i class="fas fa-random fa-2x" title="random"></i>
+                     </div>
+                     <div class="prev-track">
+                         <i class="fa fa-step-backward fa-2x"></i>
+                     </div>
+                     <div class="playpause-track">
+                         <i class="fa fa-play-circle fa-5x"></i>
+                     </div>
+                     <div class="next-track">
+                         <i class="fa fa-step-forward fa-2x"></i>
+                     </div>
+                     <div class="repeat-track">
+                         <i class="fa fa-repeat fa-2x" title="repeat"></i>
+                     </div>
+               </div>
+               <div class="box-swipe">
+                <div class="swipe-tracks">.</div>
+                <div class="swipe-tracks">.</div>
+                <div class="swipe-tracks">.</div>
+               </div>
+               <div class="x">
+                    <img src="./img/1487086345-cross_81577.svg" alt="x">
+               </div>
             </div>
-        </div>`
+                <div class="beat-container beats">
+                </div>
+            </div>
+        </div>
+        `
+
+music_list.forEach(track => {
+    const beatContainer = document.querySelector('.beats');
+    beatContainer.innerHTML += ` <div class="track">
+    <div class="track-container">
+        <img src="${track.img}" class="track-logo"></img>
+        
+        <p class="track-nameing">
+            ${track.name}
+        </p>
+    </div>
+    <p class="track-price">
+        $
+    </p>
+</div>`
+})
+
+const header = document.querySelector('header');
+header.classList.add('display-none');
 
 const tracks = document.querySelectorAll('.track');
 
-const background = document.querySelector('.player');
+const x = document.querySelector('.x');
 const formPlayer = document.querySelector('.wrapper');
 
 
@@ -78,7 +112,7 @@ tarackActive();
 loadTrack(track_index);
 playpauseTrack();
 
-background.addEventListener('click', () => {
+x.addEventListener('click', () => {
     document.body.style.background = `#0d0638`;
     renderTrackList();
     pauseTrack();
@@ -87,6 +121,16 @@ background.addEventListener('click', () => {
 
 formPlayer.addEventListener('click', e => {
     e.stopPropagation();
+})
+
+tracks.forEach((track, index) => {
+    track.addEventListener('click', (e) => {
+        e.stopPropagation();
+        loadTrack(index);
+        playTrack();
+        track_index = index
+        tarackActive();
+    })
 })
 
 function tarackActive () {
@@ -231,9 +275,9 @@ function setVolume(){
     curr_track.volume = volume_slider.value / 100;
 }
 
-// volume_slider.addEventListener('change', () => {
-//     setVolume();
-// })
+volume_slider.addEventListener('change', () => {
+    setVolume();
+})
 
 function setUpdate(){
     let seekPosition = 0;

@@ -5,7 +5,7 @@ import { music_list } from "./trackList.js";
 export function renderTrackList() {
     const app = document.querySelector('.app');
     app.innerHTML = `
-    <div class='box center'>
+    <div class='box ${window.screen.width > 500 ? `center`: ''}'>
         <h2 class="heading"><span class="main-color">Be</span>ats</h2>
         <div class="beat-container">
         </div>
@@ -30,8 +30,10 @@ export function renderTrackList() {
     tracks.forEach((track,index) => {
         track.addEventListener('click', () => {
             if(window.screen.width < 786){
+                const heightWindow  = window.screen.height;
+                window.scroll(heightWindow,0);
                 renderPlayer(index);
-            } else {
+            } else { 
                 const beatsSectionBtn = document.querySelectorAll('.header__item')[0];
                 beatsSectionBtn.addEventListener('click', () => {
                     location.reload();

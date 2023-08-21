@@ -14,19 +14,19 @@ export function renderPcPlayer(indexEl) {
             <div class="total-duration">00:00</div>
         </div>
         <div class="buttons buttons_footer">
-                <div class="random-track">
+                <div class="random-track display-none">
                     <i class="fas fa-random fa-2x" title="random"></i>
                 </div>
                 <div class="prev-track">
                     <i class="fa fa-step-backward fa-2x"></i>
                 </div>
-                <div class="playpause-track">
-                    <i class="fa fa-play-circle fa-5x"></i>
+                <div class="playpause-track playpause-track__footer">
+                    <i class="fa fa-play-circle fa-5x__footer"></i>
                 </div>
                 <div class="next-track">
                     <i class="fa fa-step-forward fa-2x"></i>
                 </div>
-                <div class="repeat-track">
+                <div class="repeat-track display-none">
                     <i class="fa fa-repeat fa-2x" title="repeat"></i>
                 </div>
             </div>
