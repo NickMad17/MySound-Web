@@ -1,4 +1,5 @@
 /* Reset and base styles  */
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -115,7 +116,6 @@ body {
 }
 
 main {
-  padding-top: 7rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -245,9 +245,6 @@ a {
   }
 }
 .player {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,19 +258,35 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: rgba(91, 91, 91, 0.4784313725);
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .wrapper {
-  min-height: 30px;
-  border: 1px solid transparent;
-  padding: 1.875rem;
-  border-radius: 1.25rem;
-  background-color: rgba(0, 0, 0, 0.862745098);
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.6901960784);
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
           box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.music {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .details {
@@ -295,8 +308,8 @@ a {
 .track-art {
   z-index: 100;
   margin: 25px;
-  height: 12.5rem;
-  width: 12.5rem;
+  height: 15rem;
+  width: 15rem;
   border: 2px solid #FFFAFA;
   background-size: cover;
   background-position: center;
@@ -306,8 +319,36 @@ a {
   border-radius: 190px;
 }
 
+.box-swipe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: center;
+  top: 90vh;
+}
+
+.swipe-tracks {
+  font-size: 3rem;
+}
+
+.x {
+  position: absolute;
+  left: 89vw;
+  top: 2vh;
+}
+.x img {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+}
+
+.fa-5x {
+  font-size: 7rem;
+}
+
 .now-playing {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .track-name {
@@ -316,7 +357,7 @@ a {
 
 .track-artist {
   margin-top: 5px;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .buttons {
@@ -330,7 +371,11 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1.875rem;
+  margin-top: 0.5rem;
 }
 
 .active {
@@ -342,7 +387,7 @@ a {
 .playpause-track,
 .prev-track,
 .next-track {
-  padding: 15px;
+  padding: 1.5rem;
   opacity: 0.8;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
@@ -366,6 +411,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 80vw;
 }
 
 .seek_slider, .volume_slider {
@@ -537,7 +583,7 @@ p {
 .heading {
   text-align: center;
   padding: 1.5rem 0;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .beat-container {
@@ -637,6 +683,7 @@ p {
 
 .app {
   position: relative;
+  padding-top: 7rem;
 }
 
 .logo-animation {
@@ -699,6 +746,28 @@ p {
 }
 .track_active:hover {
   border: rgba(255, 0, 183, 0.7529411765) 3px solid;
+}
+
+.padding-none {
+  padding-top: 0;
+}
+
+.beats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  border-radius: 0;
 }
 
 .footer {

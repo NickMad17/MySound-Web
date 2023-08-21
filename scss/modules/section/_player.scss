@@ -1,23 +1,27 @@
 .player{
     // z-index: 200;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background: #5b5b5b7a;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 }
   .wrapper{ 
-    min-height: 30px;
-    border: 1px solid transparent;
-    padding: 1.875rem;
-    border-radius: 1.25rem;
-    background-color: #000000dc;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background: #000000b0;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+  .music{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    width: 100vw;
   }
   
   .details {
@@ -30,8 +34,8 @@
   .track-art {
   z-index: 100;
   margin: 25px;
-  height: 12.5rem;
-  width: 12.5rem;
+  height: 15rem;
+  width: 15rem;
   border:2px solid 	#FFFAFA;
   background-size: cover;
   background-position: center;
@@ -43,9 +47,37 @@
   -webkit-border-radius:190px;
   border-radius:190px;
   }
+
+  .box-swipe{
+    display: flex;
+    position: absolute;
+    left: center;
+    top: 90vh;
+}
+
+  .swipe-tracks{
+    font-size: 3rem;
+  }
+
+  .x{
+    position: absolute;
+    left: 89vw;
+    top: 2vh;
+    img {
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+
   
+  .fa-5x{
+    font-size: 7rem;
+}
+
   .now-playing {
-  font-size: 1rem;
+  font-size: 1.5rem;
   }
   
   .track-name {
@@ -54,14 +86,16 @@
   
   .track-artist {
   margin-top: 5px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   }
   
   .buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 30px;
+  justify-content: center;
+  margin-bottom: 1.875rem;
+  margin-top: 0.5rem;
   }
   .active{
       color: black;
@@ -72,7 +106,7 @@
   .playpause-track,
   .prev-track,
   .next-track {
-  padding: 15px;
+  padding: 1.5rem;
   opacity: 0.8;
   transition: opacity .2s;
   }
@@ -89,7 +123,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+  width: 80vw;
+}
   
   .seek_slider, .volume_slider {
   -webkit-appearance: none;
