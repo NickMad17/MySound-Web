@@ -34,8 +34,14 @@
     height: 4rem;
     width: 4rem;
     position: absolute;
-    bottom: -1.2rem;
+    bottom: -0.9rem;
     
+}
+
+.playpause-track__footer{
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
 }
 
 // .playpause-track__footer {
@@ -44,3 +50,6 @@
 //     right: 0;
 // }
 
+.play__footer{
+    font-size: 4rem;
+}
