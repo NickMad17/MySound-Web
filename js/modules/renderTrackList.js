@@ -26,6 +26,7 @@ export function renderTrackList() {
     </div>`
     })
 
+
     const tracks = document.querySelectorAll('.track');
     tracks.forEach((track,index) => {
         track.addEventListener('click', () => {
@@ -34,11 +35,6 @@ export function renderTrackList() {
                 window.scroll(heightWindow,0);
                 renderPlayer(index);
             } else { 
-                const beatsSectionBtn = document.querySelectorAll('.header__item')[0];
-                beatsSectionBtn.addEventListener('click', () => {
-                    location.reload();
-                    renderTrackList();
-                })
                 renderPcPlayer(index);
             }
         })

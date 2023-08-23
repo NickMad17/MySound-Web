@@ -20,11 +20,11 @@ export function renderPlayer(indexEl) {
                      <div class="total-duration">00:00</div>
                  </div>
                 
-                 <div class="slider_container">
+                 <!-- <div class="slider_container">
                  <i class="fa fa-volume-down"></i>
                  <input type="range" min="1" max="100" value="99" class="volume_slider" >
                  <i class="fa fa-volume-up"></i>
-                 </div> 
+                 </div> -->
                 
                  <div class="buttons">
                      <div class="random-track">
@@ -113,7 +113,9 @@ loadTrack(track_index);
 playpauseTrack();
 
 x.addEventListener('click', () => {
+    header.classList.remove('display-none');
     document.body.style.background = `#0d0638`;
+    app.classList.remove('padding-none');
     renderTrackList();
     pauseTrack();
 
@@ -275,9 +277,9 @@ function setVolume(){
     curr_track.volume = volume_slider.value / 100;
 }
 
-volume_slider.addEventListener('change', () => {
-    setVolume();
-})
+// volume_slider.addEventListener('change', () => {
+//     setVolume();
+// })
 
 function setUpdate(){
     let seekPosition = 0;
