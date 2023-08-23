@@ -15,7 +15,7 @@ export function renderPcPlayer(indexEl) {
         </div>
         <div class="buttons buttons_footer">
                 <div class="playpause-track playpause-track__footer">
-                    <i class="fa fa-play-circle fa-5x__footer"></i>
+                    <i class="fa fa-play-circle fa-5x play__footer"></i>
                 </div>
             </div>
     </div>`
@@ -62,7 +62,7 @@ tracks.forEach((track) => {
         wave.classList.add('loader');
         headerLogo.classList.add('display-none');
         headerLogo.classList.remove('logo-animation');
-        playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+        playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x play__footer"></i>';
     })
 })
 
@@ -155,7 +155,7 @@ function playTrack(){
     wave.classList.add('loader');
     headerLogo.classList.add('display-none');
     headerLogo.classList.remove('logo-animation');
-    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x play__footer"></i>';
 }
 function pauseTrack(){
     curr_track.pause();
@@ -164,7 +164,7 @@ function pauseTrack(){
     wave.classList.remove('loader');
     headerLogo.classList.remove('display-none');
     headerLogo.classList.add('logo-animation');
-    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x play__footer"></i>';
 }
 function nextTrack(){
     if(track_index < music_list.length - 1 && isRandom === false){
