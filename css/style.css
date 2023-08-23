@@ -145,12 +145,8 @@ a {
   padding-bottom: 1.5rem;
 }
 .header__logo p {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
-}
-.header__logo:hover {
-  -webkit-animation: rotate-in-hor 1s linear infinite;
-          animation: rotate-in-hor 1s linear infinite;
 }
 .header__nav {
   display: -webkit-box;
@@ -387,7 +383,7 @@ a {
 .playpause-track,
 .prev-track,
 .next-track {
-  padding: 1.5rem;
+  padding: 1rem;
   opacity: 0.8;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
@@ -502,7 +498,7 @@ p {
   }
 }
 .loader {
-  height: 3.4rem;
+  height: 2.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -527,10 +523,10 @@ p {
 @-webkit-keyframes animate {
   50% {
     height: 20%;
-    background: #4286f4;
+    background: #104ee1;
   }
   100% {
-    background: #4286f4;
+    background: #104ee1;
     height: 100%;
   }
 }
@@ -538,10 +534,10 @@ p {
 @keyframes animate {
   50% {
     height: 20%;
-    background: #4286f4;
+    background: #104ee1;
   }
   100% {
-    background: #4286f4;
+    background: #104ee1;
     height: 100%;
   }
 }
@@ -582,7 +578,7 @@ p {
 
 .heading {
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
   font-size: 3rem;
 }
 
@@ -668,6 +664,12 @@ p {
   .header__block {
     display: none;
   }
+  .beats {
+    min-height: 100dvh;
+  }
+  .music {
+    min-height: 100dvh;
+  }
 }
 @media (max-width: 425px) {
   html {
@@ -683,7 +685,7 @@ p {
 
 .app {
   position: relative;
-  padding-top: 7rem;
+  padding-top: 5rem;
 }
 
 .logo-animation {

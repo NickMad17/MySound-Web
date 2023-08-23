@@ -106,7 +106,7 @@
   .playpause-track,
   .prev-track,
   .next-track {
-  padding: 1.5rem;
+  padding: 1rem;
   opacity: 0.8;
   transition: opacity .2s;
   }
@@ -195,7 +195,7 @@
       }
   }
   .loader {
-    height: 3.4rem;
+    height: 2.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -211,11 +211,11 @@
     @keyframes animate {
       50% {
         height: 20%;
-        background: #4286f4;
+        background: #104ee1;
       }
   
       100% {
-        background: #4286f4;
+        background: #104ee1;
         height: 100%;
       }
     }

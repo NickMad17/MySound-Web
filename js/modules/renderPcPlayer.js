@@ -14,20 +14,8 @@ export function renderPcPlayer(indexEl) {
             <div class="total-duration">00:00</div>
         </div>
         <div class="buttons buttons_footer">
-                <div class="random-track display-none">
-                    <i class="fas fa-random fa-2x" title="random"></i>
-                </div>
-                <div class="prev-track">
-                    <i class="fa fa-step-backward fa-2x"></i>
-                </div>
                 <div class="playpause-track playpause-track__footer">
                     <i class="fa fa-play-circle fa-5x__footer"></i>
-                </div>
-                <div class="next-track">
-                    <i class="fa fa-step-forward fa-2x"></i>
-                </div>
-                <div class="repeat-track display-none">
-                    <i class="fa fa-repeat fa-2x" title="repeat"></i>
                 </div>
             </div>
     </div>`
@@ -66,9 +54,15 @@ tarackActive();
 loadTrack(track_index);
 playpauseTrack();
 
-tracks.forEach((track, index) => {
+
+tracks.forEach((track) => {
     track.addEventListener('click', () => {
         pauseTrack();
+        track_art.classList.add('rotate');
+        wave.classList.add('loader');
+        headerLogo.classList.add('display-none');
+        headerLogo.classList.remove('logo-animation');
+        playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
     })
 })
 
@@ -124,9 +118,9 @@ function reset(){
 function randomTrack(){
     isRandom ? pauseRandom() : playRandom();
 }
-random_btn.addEventListener('click', () => {
-    randomTrack();
-})
+// random_btn.addEventListener('click', () => {
+//     randomTrack();
+// })
 
 function playRandom(){
     isRandom = true;
@@ -142,16 +136,16 @@ function repeatTrack(){
     playTrack();
 }
 
-repeat_btn.addEventListener('click', () => {
-    repeatTrack();
-})
+// repeat_btn.addEventListener('click', () => {
+//     repeatTrack();
+// })
 
 function playpauseTrack(){
     isPlaying ? pauseTrack() : playTrack();
 }
 
 playpause_btn.addEventListener('click', () => {
-    playpauseTrack()
+    playpauseTrack();
 })
 
 function playTrack(){
@@ -186,9 +180,9 @@ function nextTrack(){
     playTrack();
 }
 
-next_btn.addEventListener('click', () => {
-    nextTrack();
-})
+// next_btn.addEventListener('click', () => {
+//     nextTrack();
+// })
 function prevTrack(){
     if(track_index > 0){
         track_index -= 1;
@@ -200,9 +194,9 @@ function prevTrack(){
     playTrack();
 }
 
-prev_btn.addEventListener('click', () => {
-    prevTrack()
-})
+// prev_btn.addEventListener('click', () => {
+//     prevTrack()
+// })
 
 function seekTo(){
     let seekto = curr_track.duration * (seek_slider.value / 100);

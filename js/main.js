@@ -1,6 +1,7 @@
 import { louder } from "./modules/loader.js";
 import { renderTrackList } from "./modules/renderTrackList.js";
-// renderApp(renderTrackList);
+
+// ----------------------- headerlogic --------------------
 
 const aboutSectionBtn = document.querySelectorAll('.header__item')[1];
 
@@ -11,6 +12,17 @@ aboutSectionBtn.addEventListener('click', () => {
     app.innerHTML = `wgrwg`;
 })
 
+const beatsSectionBtn = document.querySelectorAll('.header__item')[0];
+beatsSectionBtn.addEventListener('click', () => {
+    location.reload();
+})
+
+const logo = document.querySelector('.header__logo');
+logo.addEventListener('click', () => {
+    location.reload();
+})
+
+// -------------------------------------------
 
 renderTrackList();
 louder();
