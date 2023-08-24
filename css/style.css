@@ -602,8 +602,15 @@ p {
   font-size: 3rem;
 }
 
+.box {
+  margin-bottom: 7rem;
+}
+
+.class {
+  height: 1px;
+}
+
 .beat-container {
-  margin: 0;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.6156862745);
   border-radius: 20px;
@@ -615,7 +622,6 @@ p {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1rem;
-  margin-bottom: 6rem;
 }
 
 .track {
