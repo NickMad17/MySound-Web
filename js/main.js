@@ -1,6 +1,8 @@
 import { louder } from "./modules/loader.js";
 import { renderTrackList } from "./modules/renderTrackList.js";
 
+// https://www.npmjs.com/package/json-server
+
 // ----------------------- headerlogic --------------------
 
 const aboutSectionBtn = document.querySelectorAll('.header__item')[1];
