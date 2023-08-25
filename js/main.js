@@ -24,7 +24,22 @@ logo.addEventListener('click', () => {
     location.reload();
 })
 
-// -------------------------------------------
+// ----------------------Render app---------------------
+const headerNav = () => {
+    const items = document.querySelectorAll('.header__item');
+    const blocks = document.querySelectorAll('.block__text');
+    const nav = [...items, ...blocks];
+    nav.forEach(navElement => {
+        navElement.addEventListener('click', () => {
+            nav.forEach(el => {
+                el.classList.remove('nav-active');
+            })
+            navElement.classList.add('nav-active');
+        })
+    })
+}
+headerNav();
+// 
 
 renderTrackList();
 louder();

@@ -22,7 +22,7 @@
         justify-content: center;
         align-items: center;
         font-weight: 400;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         box-sizing: border-box;
         transition: color 0.4s ease-in-out;
         &:hover{
@@ -49,12 +49,12 @@
             border-bottom: 2px solid $color;
         }
         &_search{
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: $mainColor;
         }
         &_login{
             color: $color;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             i{
                 color: $mainColor;
                 font-size: 2rem;
@@ -69,6 +69,22 @@
         padding-left: 0.2rem;
     }
 }
+
+.nav-active {
+    color: $mainColor;
+    animation: nav-opasity 0.3s ease-in;
+}
+
+@keyframes nav-opasity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes rotate-in-hor {
     0% {
       -webkit-transform: rotateX(360deg);
