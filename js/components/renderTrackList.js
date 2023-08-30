@@ -1,5 +1,5 @@
 import { renderPcPlayer } from "./renderPcPlayer.js";
-import { renderPlayer } from "./renderPlayer.js";
+import { renderPlayer } from "./mobile/renderPlayer.js";
 import { music_list } from "./trackList.js";
 
 export function renderTrackList() {

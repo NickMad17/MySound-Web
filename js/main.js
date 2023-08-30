@@ -1,5 +1,5 @@
-import { louder } from "./modules/loader.js";
-import { renderTrackList } from "./modules/renderTrackList.js";
+import { louder } from "./components/loader.js";
+import { renderTrackList } from "./components/renderTrackList.js";
 
 // https://www.npmjs.com/package/json-server
 
