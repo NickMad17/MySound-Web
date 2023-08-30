@@ -9,6 +9,12 @@
     padding-top: 5rem;
 }
 
+.rotate-down {
+    transform: translate(0, 100%);
+    transition: 0.4s ease-in-out;
+    
+}
+
 .logo-animation {
     animation: rotate-in-hor 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -68,5 +74,9 @@
     width: 100vw;
     margin: 0;
     border-radius: 0;
+    background: #000000de;
 }
 
+.swiper-pagination-bullet-active{
+    background: #000;
+}
