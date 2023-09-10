@@ -104,7 +104,6 @@ export function renderHeader() {
         const items = document.querySelectorAll('.header__item');
         const blocks = document.querySelectorAll('.block__text');
         const nav = [...items, ...blocks];
-        console.log(nav);
         nav.forEach(navElement => {
             navElement.addEventListener('click', () => {
                 burger.classList.remove('burger-active');
