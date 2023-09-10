@@ -130,6 +130,7 @@ a {
 .header {
   z-index: 200;
   width: 100vw;
+  height: 5.5rem;
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,6 +151,23 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 3rem;
+}
+.header__nav-mob {
+  width: 100vw;
+  background: #0b0117;
+  position: absolute;
+  top: -100vh;
+  right: 0;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+}
+.header__nav-mob-active {
+  top: 0;
+  opacity: 1;
+  border-radius: 0 0 10% 40%;
+  -webkit-animation: burger-in 0.5s ease-in-out;
+          animation: burger-in 0.5s ease-in-out;
 }
 .header__item {
   display: -webkit-box;
@@ -211,6 +229,33 @@ a {
   font-size: 2rem;
 }
 
+.mobale-logo {
+  padding-left: 3rem;
+  padding-top: 1.5rem;
+}
+
+.nav-mob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.9rem;
+}
+.nav-mob__head {
+  height: 5.7rem;
+  width: 100vw;
+  margin-left: 0;
+}
+.nav-mob__text {
+  font-size: 2.4rem;
+}
+.nav-mob__text:last-child {
+  padding-bottom: 1.5rem;
+}
+
 .block__text {
   color: #fff;
   padding-left: 0.2rem;
@@ -222,6 +267,96 @@ a {
           animation: nav-opasity 0.3s ease-in;
 }
 
+.burger {
+  margin-top: 8px;
+  display: none;
+  width: 25px;
+  height: 35px;
+  position: relative;
+}
+.burger span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 20px;
+  background: #fff;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.burger span:nth-child(2) {
+  top: 25%;
+  height: 3px;
+}
+.burger span:nth-child(3) {
+  top: 50%;
+}
+
+.burger-active {
+  margin-top: 8px;
+  width: 25px;
+  height: 30px;
+  position: relative;
+}
+.burger-active span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.burger-active span:nth-child(2) {
+  -webkit-animation: burger-out 0.3s ease-in-out;
+          animation: burger-out 0.3s ease-in-out;
+  opacity: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.burger-active span:nth-child(3) {
+  top: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+@-webkit-keyframes burger-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes burger-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes burger-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes burger-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @-webkit-keyframes nav-opasity {
   0% {
     opacity: 0;
@@ -230,7 +365,6 @@ a {
     opacity: 1;
   }
 }
-
 @keyframes nav-opasity {
   0% {
     opacity: 0;
@@ -538,6 +672,10 @@ p {
           align-items: center;
 }
 
+.swiper-pagination {
+  background: rgba(66, 1, 95, 0.6901960784);
+}
+
 .loader .stroke {
   background: #f1f1f1;
   height: 150%;
@@ -751,11 +889,22 @@ p {
   html {
     font-size: 14px;
   }
-  .header__item {
+  .header {
+    position: relative;
+  }
+  .header__nav {
     display: none;
   }
-  .header__block {
-    display: none;
+  .header__blocks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .beats {
     min-height: 100dvh;
@@ -778,7 +927,7 @@ p {
 
 .app {
   position: relative;
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 .rotate-down {
@@ -875,6 +1024,10 @@ p {
 
 .swiper-pagination-bullet-active {
   background: #000;
+}
+
+.hidden {
+  overflow-y: hidden;
 }
 
 .footer {

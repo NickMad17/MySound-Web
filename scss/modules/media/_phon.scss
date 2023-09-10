@@ -10,12 +10,18 @@
         font-size: 14px;
     }
     .header{
-        &__item{
+        position: relative;
+        &__nav{
             display: none;
         }
-        &__block{
-            display: none;
+
+        &__blocks{
+            flex-direction: column;
         }
+    }
+
+    .burger{
+        display: flex;
     }
 
     .beats{

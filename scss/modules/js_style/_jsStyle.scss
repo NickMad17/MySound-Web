@@ -3,10 +3,9 @@
 }
 
 
-
 .app{
     position: relative;
-    padding-top: 5rem;
+    padding-top: 3rem;
 }
 
 .rotate-down {
@@ -79,4 +78,8 @@
 
 .swiper-pagination-bullet-active{
     background: #000;
+}
+
+.hidden {
+    overflow-y: hidden;
 }
