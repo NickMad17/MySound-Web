@@ -5,7 +5,7 @@
     position: fixed;
     display: flex;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.6156862745);
+    background: $headerBg;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     &__logo{
@@ -21,7 +21,7 @@
 
     &__nav-mob{
         width: 100vw;
-        background: #0b0117;
+        background: $bgMobilNav;
         position: absolute;
         top: -100vh;
         right: 0;
@@ -41,43 +41,13 @@
         justify-content: center;
         align-items: center;
         font-weight: 400;
+        padding-top: 0.5rem;
         font-size: 1.3rem;
         box-sizing: border-box;
         transition: color 0.4s ease-in-out;
         &:hover{
             color: $mainColor;
             border-radius: 30px;
-        }
-    }
-
-    &__blocks{
-        display: flex;
-        gap: 3rem;
-    }
-
-    &__block{
-        min-width: 2rem;
-        display: flex;
-        gap: 0.3rem;
-        justify-content: center;
-        align-items: center;
-        color: $mainColor;
-        border-bottom: 2px solid $mainColor;
-        transition: border 0.4s ease-in-out;
-        &:hover{
-            border-bottom: 2px solid $color;
-        }
-        &_search{
-            font-size: 1.5rem;
-            color: $mainColor;
-        }
-        &_login{
-            color: $color;
-            font-size: 1.5rem;
-            i{
-                color: $mainColor;
-                font-size: 2rem;
-            }
         }
     }
 }
@@ -95,7 +65,7 @@
         height: 5.7rem;
         width: 100vw;
         margin-left: 0;
-        // background: rgba(0, 0, 0, 0.6156862745);
+        // background: $headerBg;
     }
 
     &__text{
@@ -131,7 +101,7 @@
         height: 3px;
         width: 100%;
         border-radius: 20px;
-        background: #fff;
+        background: $color;
         top: 0;
         left: 0;
         transition: 0.3s ease-in-out;
@@ -157,7 +127,7 @@
         position: absolute;
         height: 3px;
         width: 100%;
-        background: #fff;
+        background: $color;
         top: 0;
         left: 0;
         transform: rotate(-45deg);
@@ -176,6 +146,14 @@
             transform: rotate(-45deg);
         }
     }
+}
+
+.theme{
+    height: 35px;
+    width: 35px;
+    background: $themeSvg;
+    border-radius: 50%;
+    position: relative;
 }
 
 @keyframes burger-out {
@@ -215,3 +193,5 @@
               transform: rotateX(0deg);
     }
   }
+
+

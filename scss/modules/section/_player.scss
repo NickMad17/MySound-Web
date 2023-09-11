@@ -8,7 +8,7 @@
     position: relative;
     width: 100vw;
     min-height: 100vh;
-    background: #000000b0;
+    background: $trackBg ;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 
@@ -33,7 +33,7 @@
   margin: 25px;
   height: 15rem;
   width: 15rem;
-  border:2px solid 	#FFFAFA;
+  border:2px solid $color;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -65,7 +65,7 @@
     }
     &-span {
       position: absolute;
-      background: #fff;
+      background: $color;
       top: 0;
       width: 15px;
       height: 2px;
@@ -204,9 +204,10 @@
   i.fa-step-backward,
   p {
   cursor: pointer;
+  color: $color;
   }
   .randomActive{
-      color: black;
+      color: rgb(88, 88, 88);
   }
   .rotate {
       animation: rotation 8s infinite linear;
@@ -231,7 +232,7 @@
   }
 
   .loader .stroke{
-      background: #f1f1f1;
+      background: $color;
       height: 150%;
       width: 10px;
       border-radius: 50px;

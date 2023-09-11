@@ -6,12 +6,9 @@ export function renderHeader() {
         headerRenderElement.innerHTML = `<nav class="header__nav">
         <a href="#" class="header__item nav-active">Beats</a>
         <a href="#" class="header__item">About</a>
-        <div class="header__blocks">
-            <a href="#" class="header__block header__block_login"><i class='bx bx-headphone'></i><span
-                    class="block__text">Contact</span></a>
-            <a href="#" class="header__block header__block_search"><i class='bx bx-cart-alt'></i> <span
-                    class="block__text">10$</span></a>
-        </div>
+        <a href="#" class="header__item">Contact</a>
+        <a href="#" class="header__item">Cart</a>
+        <div class="theme"><span></span></div>
     </nav>`
 
     const aboutSectionBtn = document.querySelectorAll('.header__item')[1];

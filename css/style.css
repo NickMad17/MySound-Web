@@ -154,7 +154,7 @@ a {
 }
 .header__nav-mob {
   width: 100vw;
-  background: #0b0117;
+  background: #0b0019;
   position: absolute;
   top: -100vh;
   right: 0;
@@ -180,6 +180,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 400;
+  padding-top: 0.5rem;
   font-size: 1.3rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -189,44 +190,6 @@ a {
 .header__item:hover {
   color: #104ee1;
   border-radius: 30px;
-}
-.header__blocks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 3rem;
-}
-.header__block {
-  min-width: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.3rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #104ee1;
-  border-bottom: 2px solid #104ee1;
-  -webkit-transition: border 0.4s ease-in-out;
-  transition: border 0.4s ease-in-out;
-}
-.header__block:hover {
-  border-bottom: 2px solid #fff;
-}
-.header__block_search {
-  font-size: 1.5rem;
-  color: #104ee1;
-}
-.header__block_login {
-  color: #fff;
-  font-size: 1.5rem;
-}
-.header__block_login i {
-  color: #104ee1;
-  font-size: 2rem;
 }
 
 .mobale-logo {
@@ -322,6 +285,14 @@ a {
   top: 50%;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.theme {
+  height: 35px;
+  width: 35px;
+  background: #260651;
+  border-radius: 50%;
+  position: relative;
 }
 
 @-webkit-keyframes burger-out {
@@ -441,7 +412,7 @@ a {
   margin: 25px;
   height: 15rem;
   width: 15rem;
-  border: 2px solid #FFFAFA;
+  border: 2px solid #fff;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -627,10 +598,11 @@ i.fa-step-forward,
 i.fa-step-backward,
 p {
   cursor: pointer;
+  color: #fff;
 }
 
 .randomActive {
-  color: black;
+  color: rgb(88, 88, 88);
 }
 
 .rotate {
@@ -677,7 +649,7 @@ p {
 }
 
 .loader .stroke {
-  background: #f1f1f1;
+  background: #fff;
   height: 150%;
   width: 10px;
   border-radius: 50px;
@@ -863,7 +835,7 @@ p {
 }
 .track-logo {
   height: 65%;
-  border: 2px solid #FFFAFA;
+  border: 2px solid #fff;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -879,55 +851,13 @@ p {
   color: #fff;
 }
 
-@media (max-width: 1300px) {
-  .center {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-  .header {
-    position: relative;
-  }
-  .header__nav {
-    display: none;
-  }
-  .header__blocks {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .burger {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .beats {
-    min-height: 100dvh;
-  }
-  .music {
-    min-height: 100dvh;
-  }
-}
-@media (max-width: 425px) {
-  html {
-    font-size: 12px;
-  }
-  .loader {
-    width: 7rem;
-  }
-}
 .main-color {
   color: #104ee1;
 }
 
 .app {
   position: relative;
-  padding-top: 3rem;
+  padding-top: 7rem;
 }
 
 .rotate-down {
@@ -999,10 +929,6 @@ p {
   border: rgba(255, 0, 183, 0.7529411765) 3px solid;
 }
 
-.padding-none {
-  padding-top: 0;
-}
-
 .beats {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1030,6 +956,51 @@ p {
   overflow-y: hidden;
 }
 
+@media (max-width: 1300px) {
+  .center {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .header {
+    position: relative;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__blocks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .app {
+    padding-top: 3rem;
+  }
+  .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .beats {
+    min-height: 100dvh;
+  }
+  .music {
+    min-height: 100dvh;
+  }
+}
+@media (max-width: 425px) {
+  html {
+    font-size: 12px;
+  }
+  .loader {
+    width: 7rem;
+  }
+}
 .footer {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1085,4 +1056,8 @@ p {
 
 .play__footer {
   font-size: 4rem;
+}
+
+.padding-none {
+  padding-top: 0;
 }
